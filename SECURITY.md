@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you believe you've found a security vulnerability in this project, we encourage you to let us know. Please report it by emailing us at [opensource@hiberus.com](mailto:opensource@hiberus.com). We take security seriously and will respond as quickly as possible.
+If you believe you've found a security vulnerability in this project, we encourage you to let us know. Please report it by emailing us at [magento@hiberus.com](mailto:magento@hiberus.com). We take security seriously and will respond as quickly as possible.
 
 ## Bug Bounty Program
 

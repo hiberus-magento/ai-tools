@@ -92,9 +92,33 @@ Each agent lives in its own subdirectory inside `agents/`. The **directory name 
 
 > Custom agents will be added progressively. The table below will be kept up to date as new agents are contributed.
 
-| Agent | Description |
-|-------|-------------|
-| _(coming soon)_ | — |
+### RFP Analysis Pipeline
+
+Complete workflow for analyzing Adobe Commerce RFPs and generating effort estimates. [See full documentation](docs/agents/rfp-analysis-pipeline.md).
+
+| Agent | Description | Input | Output |
+|-------|-------------|-------|--------|
+| **rfp-analyzer** | Extract and structure requirements from RFP documents | RFP docs (.pdf, .docx, .md) | `01_requirements_analysis.md` |
+| **story-generator** | Convert requirements into INVEST-compliant user stories with BDD acceptance criteria | `01_requirements_analysis.md` | `03_technical_backlog.md` |
+| **effort-item-extractor** | Decompose requirements/stories into atomic estimable work items | Requirements or stories | `02_estimable_items.md` |
+| **effort-estimator** | Produce detailed hour estimates comparing human vs AI-assisted development | `02_estimable_items.md` | `04_detailed_estimation.md` |
+
+**Quick Start:**
+```bash
+# 1. Analyze RFP
+Use the rfp-analyzer agent to analyze the RFP documents in ./rfp-documents/
+
+# 2. Generate user stories (optional)
+Use the story-generator agent to create user stories from 01_requirements_analysis.md
+
+# 3. Extract estimable items
+Use the effort-item-extractor agent to extract estimable items from 01_requirements_analysis.md
+
+# 4. Generate estimates
+Use the effort-estimator agent to produce detailed estimates from 02_estimable_items.md
+```
+
+For complete workflow documentation, examples, and best practices, see [RFP Analysis Pipeline Guide](docs/agents/rfp-analysis-pipeline.md).
 
 ---
 
